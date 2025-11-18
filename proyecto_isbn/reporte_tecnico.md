@@ -1,0 +1,2 @@
+# Reporte técnico
+Contenido preliminar.
