@@ -19,9 +19,13 @@ jobs:
         run: |
           pip install pytest coverage
 
+      - name: Set PYTHONPATH
+        run: |
+          echo "PYTHONPATH=$PYTHONPATH:./proyecto_isbn" >> $GITHUB_ENV
+
       - name: Run tests with coverage
         run: |
-          coverage run -m pytest
+          coverage run -m pytest proyecto_isbn/tests
           coverage xml
 
       - name: Upload coverage report
